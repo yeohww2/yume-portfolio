@@ -1,0 +1,311 @@
+/* General */
+html {
+    scroll-behavior: smooth; /* Smooth scroll when clicking navigation links */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    color: #fff;
+    text-align: center;
+}
+
+/* Falling Hearts Animation */
+.falling-hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Make hearts non-interactive */
+    z-index: 1000;
+}
+
+.heart {
+    position: absolute;
+    font-size: 2rem; /* Size of the heart */
+    animation: fall 3s ease-in infinite; /* Falling animation */
+    opacity: 0; /* Make hearts initially invisible */
+    color: #ff69b4; /* Pink heart color */
+}
+
+/* Keyframes for the falling animation */
+@keyframes fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg); /* Start above the screen */
+        opacity: 1; /* Make hearts visible */
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg); /* Fall to the bottom */
+        opacity: 0; /* Fade out as it falls */
+    }
+}
+
+/* Randomize the position and animation timing */
+.heart:nth-child(1) {
+    left: 20%;
+    animation-duration: 4s;
+    animation-delay: 0s;
+}
+
+.heart:nth-child(2) {
+    left: 40%;
+    animation-duration: 5s;
+    animation-delay: 0.5s;
+}
+
+.heart:nth-child(3) {
+    left: 60%;
+    animation-duration: 3.5s;
+    animation-delay: 1s;
+}
+
+.heart:nth-child(4) {
+    left: 80%;
+    animation-duration: 6s;
+    animation-delay: 1.5s;
+}
+
+/* Background */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, #ff9a9e, #fbc2eb, #f8a5c2);
+    background-size: 400% 400%;
+    animation: gradientAnimation 5s ease infinite;
+    z-index: -1;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Header */
+header {
+    padding: 20px 0;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: transform 0.5s ease;
+}
+
+header.hidden {
+    transform: translateY(-100%);
+}
+
+header h1 {
+    font-size: 4vw;
+    margin: 0;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.6vw;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #fbc2eb;
+}
+
+/* Navigation Toggle Button */
+.nav-toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #f8a5c2;
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1100;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.nav-toggle-btn:hover {
+    background: #fbc2eb;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.nav-toggle-btn span.material-icons {
+    font-size: 24px;
+}
+
+/* Main Content */
+main {
+    margin-top: 120px;
+}
+
+.section {
+    height: 100vh;  /* Full viewport height */
+    padding: 60px 10px 80px;
+    scroll-margin-top: 60px;
+    text-align: center;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 5%;
+    margin: 10px;
+    background: #fff;
+    color: #f8a5c2;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+    background: #fbc2eb;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* About Me Title */
+.section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    color: #ff69b4; /* Pink title */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Light shadow for cuteness */
+    margin-bottom: 20px;
+}
+
+/* Card-Like Design for About Section */
+.about-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between English and Mandarin */
+    background: #ffe4e1; /* Light pastel pink background */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    max-width: 800px;
+    margin: 0 auto; /* Center the card */
+}
+
+/* Individual Content Blocks */
+.about-content {
+    font-size: 0.9rem; /* Compact text size */
+    line-height: 1.4;
+    color: #555; /* Neutral color for text */
+}
+
+/* About List */
+.about-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0; /* Adjust spacing */
+}
+
+.about-content li {
+    font-size: 0.9rem; /* Make text compact */
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    color: #333;
+}
+
+.about-content li b {
+    color: #ff69b4; /* Highlight important text in pink */
+    margin-left: 5px; /* Add space after icon */
+}
+
+.about-content li::before {
+    margin-right: 8px; /* Space between icon and text */
+    font-size: 1.2rem; /* Adjust icon size */
+}
+
+/* Game Cards */
+.game-card {
+    margin: 20px auto;
+    max-width: 90%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and shadow */
+}
+
+/* Hover effect for Game Cards */
+.game-card:hover {
+    transform: scale(1.05); /* Slightly increase the size when hovered */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+/* Modal Styles */
+.game-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: auto;
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.close-btn {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.game-modal img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Ensure modal content doesn't overlap */
+.game-modal .modal-content {
+    position: relative;
+}
+
+
