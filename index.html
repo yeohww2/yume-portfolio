@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yume's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Falling Hearts Animation -->
+<div class="falling-hearts">
+    <div class="heart">❤️</div>
+    <div class="heart">❤️</div>
+    <div class="heart">❤️</div>
+    <div class="heart">❤️</div>
+    <!-- More hearts can be added here -->
+</div>
+
+<div class="background"></div>
+
+<!-- Icon Button for Navbar Toggle -->
+<button class="nav-toggle-btn" onclick="toggleNavbar()">
+    <span class="material-icons">menu</span>
+</button>
+
+<!-- Navigation Bar -->
+<header id="navbar">
+    <h1>Welcome to Yume's Portfolio</h1>
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#social">Social Links</a>
+        <a href="#games">Games</a>
+    </nav>
+</header>
+
+<main>
+    <!-- About Me Section -->
+    <section id="about" class="section cute-about">
+        <h2>About Me</h2>
+        <div class="about-container">
+            <!-- English Section -->
+            <div class="about-content">
+                <p>Hi! I'm <b>Yume</b>. This portfolio showcases the games I love to play and the social media platforms I use. :)</p>
+                <!-- Add space -->
+                <br>
+                <ul>
+                    <li>🎂 <b>Birthday：</b> 22/02/2001</li>
+                    <li>🌟 <b>Zodiac：</b> Pisces </li>
+                    <li>🐾 <b>Hobbies：</b> Gaming, watching anime, and collecting my cat pictures.</li>
+                    <li>✨ <b>Fun Fact：</b> I love collecting in-game skins!</li>
+                </ul>
+            </div>
+            <!-- Add space -->
+            <br><br><br>
+            <!-- Mandarin Section -->
+            <div class="about-content">
+                <p>嗨！我是<b>Yume</b>。这个作品集展示了我喜欢玩的游戏以及我使用的社交媒体平台。:)</p>
+                <br>
+                <ul>
+                    <li>🎂 <b>生日：</b> 22/02/2001</li>
+                    <li>🌟 <b>星座：</b> 双鱼座 </li>
+                    <li>🐾 <b>兴趣爱好：</b> 玩游戏、看动漫，以及收集我的猫咪照片。</li>
+                    <li>✨ <b>有趣的事实：</b> 我喜欢收集游戏中的皮肤！</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Links Section -->
+    <section id="social" class="section">
+        <h2>Social Links</h2>
+        <div class="links">
+            <a href="https://instagram.com/yeohww2" class="btn" target="_blank">Instagram: yeohww2</a>
+            <a href="#" class="btn">WeChat: yeohww2</a>
+            <a href="#" class="btn">Line: viviany2303</a>
+            <a href="#" class="btn">Discord: Yuhue#7712</a>
+            <a href="https://steamcommunity.com/profiles/76561198399704170/" class="btn" target="_blank">Steam:yeohww2</a>
+        </div>
+    </section>
+
+    <!-- Game Section -->
+    <section id="games" class="section">
+        <h2>My Mobile Games</h2>
+        <div class="game-card" onclick="openModal('game1')">
+            <h3>蛋仔派对 Eggy Party (国际服)</h3>
+            <p>Username: <span>鬱彞</span></p>
+        </div>
+
+        <div class="game-card" onclick="openModal('game2')">
+            <h3>姜饼人之塔 Cookie Run: Tower of Adventures</h3>
+            <p>Username: <span>你的西西</span></p>
+        </div>
+
+        <div class="game-card" onclick="openModal('game3')">
+            <h3>姜饼人王国 Cookie Run: Kingdom</h3>
+            <p>Username: <span>西雯的后宫</span></p>
+        </div>
+
+        <!-- Modal for Game 1 -->
+        <div id="game1" class="game-modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('game1')">&times;</span>
+                <h3>蛋仔派对 Eggy Party (国际服)</h3>
+                <img src="eggyparty.jpg" alt="Eggy Party" />
+                <p>Details and description about the game.</p>
+            </div>
+        </div>
+
+        <!-- Modal for Game 2 -->
+        <div id="game2" class="game-modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('game2')">&times;</span>
+                <h3>姜饼人之塔 Cookie Run: Tower of Adventures</h3>
+                <img src="towerofadventures.jpg" alt="Cookie Run: Tower of Adventures" />
+                <p>Details and description about the game.</p>
+            </div>
+        </div>
+
+        <!-- Modal for Game 3 -->
+        <div id="game3" class="game-modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('game3')">&times;</span>
+                <h3>姜饼人王国 Cookie Run: Kingdom</h3>
+                <img src="kingdom.jpg" alt="Cookie Run: Kingdom" />
+                <p>Details and description about the game.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
