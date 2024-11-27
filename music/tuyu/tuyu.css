@@ -1,4 +1,4 @@
-/* Artist Music Page Styling */
+/* General Page Styling */
 body {
     margin: 0;
     padding: 0;
@@ -104,30 +104,30 @@ audio {
     background: #ff85b2;
 }
 
-/* Download Button */
+/* Download Button Styling */
 .download-btn {
-    margin-top: 10px;
+    margin-top: 20px;
     display: inline-block;
     font-size: 1rem;
-}
-
-/* Return Button */
-.return-btn {
-    margin-top: 30px;
-    padding: 10px 30px;
     background: #ff69b4;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 10px;
     font-weight: bold;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
+    text-decoration: none;
 }
 
-.return-btn:hover {
+.download-btn:hover {
     background: #ff85b2;
+    transform: scale(1.05);
 }
 
+.download-btn:active {
+    transform: scale(0.95);
+}
+
+/* Popup Styling */
 #song-popup {
     font-size: 1rem;
     animation: fadeInOut 3s forwards;
