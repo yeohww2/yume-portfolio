@@ -22,9 +22,12 @@ document.querySelectorAll('nav a').forEach(link => {
         const targetId = this.getAttribute('href').substring(1); // Get the target section ID
         const targetElement = document.getElementById(targetId);
 
-        const offset = 120; // Height of the navbar
-        const elementPosition = targetElement.getBoundingClientRect().top; // Section position
-        const offsetPosition = elementPosition + window.scrollY - offset;
+        // Calculate navbar height dynamically
+        const navbarHeight = document.querySelector('header').offsetHeight;
+        
+        // Get the section position relative to the document
+        const elementPosition = targetElement.getBoundingClientRect().top; 
+        const offsetPosition = elementPosition + window.scrollY - navbarHeight;
 
         window.scrollTo({
             top: offsetPosition,
