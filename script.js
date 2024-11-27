@@ -36,32 +36,11 @@ document.querySelectorAll('nav a').forEach(link => {
     });
 });
 
-function openModal(gameId) {
-    // Get the modal by ID
-    var modal = document.getElementById(gameId);
-    modal.style.display = "block";  // Show the modal
-}
-
-function closeModal(gameId) {
-    // Get the modal by ID and hide it
-    var modal = document.getElementById(gameId);
-    modal.style.display = "none";  // Hide the modal
-}
-
-// Close the modal if the user clicks outside the modal content
-window.onclick = function(event) {
-    var modals = document.querySelectorAll(".game-modal");
-    modals.forEach(function(modal) {
-        if (event.target === modal) {
-            modal.style.display = "none";
-        }
-    });
-};
 
 // Function to create random sparkles
 function createSparkles() {
     const sparkleContainer = document.getElementById('sparkles-container');
-    const sparkleCount = 30; // Number of sparkles to generate
+    const sparkleCount = 15; // Number of sparkles to generate
 
     for (let i = 0; i < sparkleCount; i++) {
         const sparkle = document.createElement('div');
@@ -91,3 +70,26 @@ window.onload = createSparkles;
 
 // Optional: Regenerate sparkles every 10 seconds
 setInterval(createSparkles, 10000);
+
+function openModal(gameId) {
+    // Get the modal by ID
+    var modal = document.getElementById(gameId);
+    modal.style.display = "block";  // Show the modal
+}
+
+function closeModal(gameId) {
+    // Get the modal by ID and hide it
+    var modal = document.getElementById(gameId);
+    modal.style.display = "none";  // Hide the modal
+}
+
+// Close the modal if the user clicks outside the modal content
+window.onclick = function(event) {
+    var modals = document.querySelectorAll(".game-modal");
+    modals.forEach(function(modal) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+};
+
