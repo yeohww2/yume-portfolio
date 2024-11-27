@@ -67,59 +67,6 @@ body {
     animation-delay: 1.5s;
 }
 
-/* Floating Stars */
-.floating-stars {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1001;
-}
-
-.star {
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    background-color: white;
-    border-radius: 50%;
-    animation: floatStars 10s infinite;
-    opacity: 0.8;
-}
-
-@keyframes floatStars {
-    0% {
-        transform: translateY(0) scale(1);
-    }
-    100% {
-        transform: translateY(-100vh) scale(0.5);
-    }
-}
-
-.star:nth-child(odd) {
-    animation-duration: 12s;
-}
-
-.star:nth-child(even) {
-    animation-duration: 8s;
-}
-
-.star:nth-child(1) {
-    left: 20%;
-    animation-delay: 0s;
-}
-
-.star:nth-child(2) {
-    left: 50%;
-    animation-delay: 2s;
-}
-
-.star:nth-child(3) {
-    left: 70%;
-    animation-delay: 4s;
-}
-
 /* Bubbles Animation */
 .bubbles {
     position: fixed;
@@ -139,15 +86,16 @@ body {
     border-radius: 50%;
     animation: bubbleFloat 10s ease-in-out infinite;
     opacity: 0.8;
+    transform: translateY(calc(100vh * -1)); /* Start bubbles off-screen */
 }
 
 @keyframes bubbleFloat {
     0% {
-        transform: translateY(100vh) scale(0.5);
+        transform: translateY(100vh) scale(0.3); /* Smaller size at start */
         opacity: 0.8;
     }
     100% {
-        transform: translateY(-100vh) scale(1.5);
+        transform: translateY(-100vh) scale(1); /* Increase size as it floats */
         opacity: 0;
     }
 }
@@ -155,19 +103,19 @@ body {
 /* Random positions and delays for bubbles */
 .bubble:nth-child(1) {
     left: 15%;
-    animation-delay: 0s;
+    animation-delay: -2s; /* Start animation at 2 seconds in */
     animation-duration: 8s;
 }
 
 .bubble:nth-child(2) {
     left: 50%;
-    animation-delay: 2s;
+    animation-delay: -4s; /* Start animation at 4 seconds in */
     animation-duration: 12s;
 }
 
 .bubble:nth-child(3) {
     left: 70%;
-    animation-delay: 4s;
+    animation-delay: -6s; /* Start animation at 6 seconds in */
     animation-duration: 10s;
 }
 
@@ -308,6 +256,7 @@ main {
 .btn {
     display: inline-block;
     padding: 10px 5%;
+    width: 200px;
     margin: 10px;
     background: #fff;
     color: #f8a5c2;
@@ -316,6 +265,7 @@ main {
     font-weight: 600;
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
 .btn:hover {
@@ -339,6 +289,7 @@ main {
     line-height: 1.4;
     color: #555;
     background-color: #fff;
+    border: 4px dotted #ff6fa1;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -375,15 +326,13 @@ main {
 .about-content ul {
     list-style: none;
     padding: 0;
-    margin: 10px 0 0;
+    margin: 0 auto;
+    text-align: left;
 }
 
 .about-content li {
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    margin-left: 50px;
-    color: #333;
+    margin-bottom: 5px;
+    line-height: 1.6;
 }
 
 .about-content li b {
@@ -394,6 +343,15 @@ main {
 .about-content li::before {
     margin-right: 8px;
     font-size: 1.2rem;
+}
+
+/* Social Link */
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
 }
 
 /* Game Cards */
@@ -457,4 +415,67 @@ main {
 /* Ensure modal content doesn't overlap */
 .game-modal .modal-content {
     position: relative;
+}
+
+/* Music Section Styling */
+#music {
+    background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+    padding: 40px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#music h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    color: #ff69b4;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Music Cards */
+.music-category {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.music-card {
+    background: #fff;
+    border-radius: 15px;
+    text-align: center;
+    width: 250px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.music-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.music-card a {
+    text-decoration: none;
+    color: #333;
+}
+
+.music-card h3 {
+    font-size: 1.5rem;
+    color: #ff69b4;
+    margin: 10px 0;
+}
+
+.music-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Artist Images */
+.artist-img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
