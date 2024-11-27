@@ -273,11 +273,11 @@ main {
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
 
-/* Modal Styles */
+/* Game Modal Styles */
 .game-modal {
-    display: none; /* Ensure it's hidden by default */
-    position: fixed; /* Fixed positioning to cover the entire screen */
-    z-index: 1000; /* Ensure it sits above other content */
+    display: none; /* Hide modal by default */
+    position: fixed; /* Position it fixed at the top of the screen */
+    z-index: 1000; /* Make sure it's above everything else */
     left: 0;
     top: 0;
     width: 100%;
@@ -318,12 +318,7 @@ main {
 
 /* Image inside modal */
 .game-modal img {
-    width: 100%; /* Ensure image takes full width of the modal */
-    height: auto; /* Maintain aspect ratio */
+    width: 100%;
+    height: auto;
     border-radius: 10px;
-}
-
-/* Ensure modal content doesn't overlap */
-.game-modal .modal-content {
-    position: relative;
 }
