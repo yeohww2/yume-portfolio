@@ -154,7 +154,7 @@ nav a:hover {
 
 /* Main Content */
 main {
-    margin-top: 120px;
+    margin-top: 60px;
 }
 
 .section {
@@ -193,24 +193,42 @@ main {
     margin-bottom: 20px;
 }
 
-/* Card-Like Design for About Section */
-.about-card {
-    display: flex;
-    flex-direction: column;
-    gap: 20px; /* Space between English and Mandarin */
-    background: #ffe4e1; /* Light pastel pink background */
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-    max-width: 800px;
-    margin: 0 auto; /* Center the card */
-}
-
 /* Individual Content Blocks */
 .about-content {
     font-size: 0.9rem; /* Compact text size */
     line-height: 1.4;
     color: #555; /* Neutral color for text */
+    background-color: #fff; /* White background for the content */
+    padding: 20px; /* Padding around the content */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow for depth */
+    margin: 0 auto; /* Center content */
+    max-width: 800px; /* Limit the width */
+    transition: transform 0.5s ease-in-out; /* Smooth transition for the hover effect */
+}
+
+/* Bounce Animation */
+@keyframes bounceBack {
+    0% {
+        transform: translateX(0); /* Start at the original position */
+    }
+    30% {
+        transform: translateX(15px); /* Move to the right */
+    }
+    50% {
+        transform: translateX(0); /* Bounce back to the original position */
+    }
+    70% {
+        transform: translateX(8px); /* Move slightly to the right again */
+    }
+    100% {
+        transform: translateX(0); /* Final bounce back to the original position */
+    }
+}
+
+/* Hover Effect: Bounce the content */
+.about-content:hover {
+    animation: bounceBack 0.6s ease-in-out; /* Apply the bounce animation */
 }
 
 /* About List */
@@ -224,7 +242,7 @@ main {
     font-size: 0.9rem; /* Make text compact */
     display: flex;
     align-items: center;
-    margin-left: 50px;
+    margin-left: 50px; /* Move the list items to the right */
     color: #333;
 }
 
@@ -307,5 +325,3 @@ main {
 .game-modal .modal-content {
     position: relative;
 }
-
-
