@@ -158,7 +158,7 @@ main {
 }
 
 .section {
-    min-height: 100vh;  
+    height: 100vh;  
     padding: 60px 10px 80px;
     scroll-margin-top: 60px;
     text-align: center;
