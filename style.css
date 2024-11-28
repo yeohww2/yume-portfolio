@@ -177,7 +177,7 @@ body {
 
 /* Header */
 header {
-    padding: 20px 0;
+    padding: 1rem 0;
     background: rgba(0, 0, 0, 0.8);
     position: fixed;
     width: 100%;
@@ -242,7 +242,7 @@ nav a:hover {
 
 /* Main Content */
 main {
-    margin-top: 80px;
+    margin-top: calc(20px * 2);
 }
 
 .section {
