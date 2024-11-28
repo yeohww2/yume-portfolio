@@ -3,136 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tuyu Playlist</title>
-    <link rel="stylesheet" href="tuyu.css"> <!-- Link to your Tuyu-specific CSS -->
+    <title>Yume's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<section id="artist-music" class="section">
-    <h2>🌸 Tuyu's Playlist 🎵</h2>
-    <p class="artist-description">
-        Welcome to Tuyu's music page! Enjoy the songs filled with emotions and heartfelt lyrics. 💕
-    </p>
-    <br>
-    <div class="song-list">
-        <!-- Song 1 -->
-        <div class="song-card">
-            <!-- Google Drive Audio Embed -->
-            <iframe src="https://drive.google.com/file/d/1OSJtcuvrczK4E-cIcSgvebXaSFVc_4BL/preview" allow="autoplay"></iframe>
-            <p>🌟 あの世行きのバスに乗ってさらば</p>
-            <a href="https://drive.google.com/uc?export=download&id=1OSJtcuvrczK4E-cIcSgvebXaSFVc_4BL" download class="download-btn">Download</a>
+
+<!-- Falling Hearts Animation -->
+<div class="falling-hearts">
+    <div class="heart">❤️</div>
+    <div class="heart">❤️</div>
+    <div class="heart">❤️</div>
+    <div class="heart">❤️</div>
+</div>
+
+<!-- Bubbles -->
+<div class="bubbles">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+</div>
+
+<!-- Sparkles -->
+<div class="sparkles" id="sparkles-container"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+</div>
+
+<div class="background"></div>
+
+<!-- Icon Button for Navbar Toggle -->
+<button class="nav-toggle-btn" onclick="toggleNavbar()">
+    <span class="material-icons">menu</span>
+</button>
+
+<!-- Navigation Bar -->
+<header id="navbar">
+    <h1>Welcome to Yume's Portfolio</h1>
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#social">Social Links</a>
+        <a href="#games">Games</a>
+        <a href="#music">Music</a>
+    </nav>
+</header>
+
+<main>
+    <!-- About Me Section -->
+    <section id="about" class="section cute-about">
+        <h2>About Me</h2>
+        <div class="about-container">
+            <!-- English Section -->
+            <div class="about-content">
+                <p>Hi! I'm <b>Yume</b>. This portfolio showcases the games I love to play and the social media platforms I use. :)</p>
+                <!-- Add space -->
+                <br>
+                <ul>
+                    <li>🎂 <b>Birthday：</b> 22/02/2001</li>
+                    <li>🌟 <b>Zodiac：</b> Pisces </li>
+                    <li>🐾 <b>Hobbies：</b> Gaming, watching anime </li>
+                    <li>✨ <b>Fact：</b> I love collecting in-game skins!</li>
+                </ul>
+            </div>
+            <!-- Add space -->
+            <br>
+            <!-- Mandarin Section -->
+            <div class="about-content">
+                <p>嗨！我是<b>Yume</b>。这个作品集展示了我喜欢玩的游戏以及我使用的社交媒体平台。:)</p>
+                <br>
+                <ul>
+                    <li>🎂 <b>生日：</b> 22/02/2001</li>
+                    <li>🌟 <b>星座：</b> 双鱼座 </li>
+                    <li>🐾 <b>兴趣爱好：</b> 玩游戏、看动漫 </li>
+                    <li>✨ <b>事实：</b> 我喜欢收集游戏中的皮肤！</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Links Section -->
+    <section id="social" class="section">
+        <h2>Social Links</h2>
+        <div class="links">
+            <a href="https://instagram.com/yeohww2" class="btn" target="_blank">Instagram: yeohww2</a>
+            <a href="#social" class="btn">WeChat: yeohww2</a>
+            <a href="line://ti/p/~viviany2303" class="btn">Line: viviany2303</a>
+            <a href="discord://discordapp.com/users/Yuhue#7712" class="btn">Discord: Yuhue#7712</a>
+            <a href="https://steamcommunity.com/profiles/76561198399704170/" class="btn" target="_blank">Steam:yeohww2</a>
+        </div>
+    </section>
+
+    <!-- Game Section -->
+    <section id="games" class="section">
+        <h2>My Mobile Games</h2>
+        <div class="game-card" onclick="openModal('game1')">
+            <h3>蛋仔派对 Eggy Party (国际服)</h3>
+            <p>Username: <span>鬱彞</span></p>
         </div>
 
-        <!-- Song 2 -->
-        <div class="song-card">
-            <!-- Google Drive Audio Embed -->
-            <iframe src="https://drive.google.com/file/d/1XnB4SlS3fWaDDVKyFI6R_JJItLK2HjT4/preview" allow="autoplay"></iframe>
-            <p>🌟 いつかオトナになれるといいね</p>
-            <a href="https://drive.google.com/uc?export=download&id=1XnB4SlS3fWaDDVKyFI6R_JJItLK2HjT4" download class="download-btn">Download</a>
+        <div class="game-card" onclick="openModal('game2')">
+            <h3>姜饼人之塔 Cookie Run: Tower of Adventures</h3>
+            <p>Username: <span>你的西西</span></p>
         </div>
 
-        <!-- Song 3 -->
-        <div class="song-card">
-            <!-- Google Drive Audio Embed -->
-            <iframe src="https://drive.google.com/file/d/1OHl_BBKAx3Bji3LNMYI20XUEM5DcGST_/preview" allow="autoplay"></iframe>
-            <p>🌟 ツユ - かくれんぼっち</p>
-            <a href="https://drive.google.com/uc?export=download&id=1OHl_BBKAx3Bji3LNMYI20XUEM5DcGST_" download class="download-btn">Download</a>
+        <div class="game-card" onclick="openModal('game3')">
+            <h3>姜饼人王国 Cookie Run: Kingdom</h3>
+            <p>Username: <span>西雯的后宫</span></p>
         </div>
 
-
-        <!-- Song 4 -->
-        <div class="song-card">
-            <!-- Google Drive Audio Embed -->
-            <iframe src="https://drive.google.com/file/d/1fMkql7mlpjjJpcpFEQh8UY9EYYZ4kkIr/preview" allow="autoplay"></iframe>
-            <p>🌟 くろべえの子</p>
-            <a href="https://drive.google.com/uc?export=download&id=1fMkql7mlpjjJpcpFEQh8UY9EYYZ4kkIr" download class="download-btn">Download</a>
+        <!-- Modal for Game 1 -->
+        <div id="game1" class="game-modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('game1')">&times;</span>
+                <h3>蛋仔派对 Eggy Party (国际服)</h3>
+                <img src="gameimages/eggyparty.jpg" alt="Eggy Party" />
+                <p>Details and description about the game.</p>
+            </div>
         </div>
 
-        <!-- Song 5 -->
-        <div class="song-card">
-            <!-- Google Drive Audio Embed -->
-            <iframe src="https://drive.google.com/file/d/1jgYRhhH9aVdnHyYO7PjXM5ytxqZFE1VS/preview" allow="autoplay"></iframe>
-            <p>🌟 それでも雨は降るんだね</p>
-            <a href="https://drive.google.com/uc?export=download&id=1jgYRhhH9aVdnHyYO7PjXM5ytxqZFE1VS" download class="download-btn">Download</a>
+        <!-- Modal for Game 2 -->
+        <div id="game2" class="game-modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('game2')">&times;</span>
+                <h3>姜饼人之塔 Cookie Run: Tower of Adventures</h3>
+                <img src="gameimages/adventures.jpg" alt="Cookie Run: Tower of Adventures" />
+                <p>Details and description about the game.</p>
+            </div>
         </div>
 
-        <!-- Song 6 -->
-        <div class="song-card">
-            <!-- Google Drive Audio Embed -->
-            <iframe src="https://drive.google.com/file/d/14ML00VLTlOgLohM39dKXTUyUeHBPWfh6/preview" allow="autoplay"></iframe>
-            <p>🌟 やっぱり雨は降るんだね</p>
-            <a href="https://drive.google.com/uc?export=download&id=14ML00VLTlOgLohM39dKXTUyUeHBPWfh6" download class="download-btn">Download</a>
+        <!-- Modal for Game 3 -->
+        <div id="game3" class="game-modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('game3')">&times;</span>
+                <h3>姜饼人王国 Cookie Run: Kingdom</h3>
+                <img src="gameimages/kingdom.jpg" alt="Cookie Run: Kingdom" />
+                <p>Details and description about the game.</p>
+            </div>
         </div>
+    </section>
 
-        <!-- Song 7 -->
-        <div class="song-card">
-            <!-- Google Drive Audio Embed -->
-            <iframe src="https://drive.google.com/file/d/1ocrfWAQD_jGdRBJ31FoIE9W-F3rXLtj7/preview" allow="autoplay"></iframe>
-            <p>🌟 アンダーキッズ</p>
-            <a href="https://drive.google.com/uc?export=download&id=1ocrfWAQD_jGdRBJ31FoIE9W-F3rXLtj7" download class="download-btn">Download</a>
+    <!-- Music Section -->
+    <section id="music" class="section">
+        <h2>🎵 My Music Collection 🎶</h2>
+        <div class="music-category">
+            <div class="music-card">
+                <a href="music/tuyu/tuyu.html">
+                    <h3>Tuyu</h3>
+                </a>
+            </div>
+            <div class="music-card">
+                <a href="music/artist2.html">
+                    <h3>Artist 2</h3>
+                </a>
+            </div>
+            <!-- Add more artists -->
         </div>
+    </section>
 
-        <!-- Song 8 -->
-        <div class="song-card">
-            <!-- Google Drive Audio Embed -->
-            <iframe src="https://drive.google.com/file/d/11Ikjlwtvoazpq8IUQMDRhR8KiSSXDSjr/preview" allow="autoplay"></iframe>
-            <p>🌟 アンダーヒロイン</p>
-            <a href="https://drive.google.com/uc?export=download&id=11Ikjlwtvoazpq8IUQMDRhR8KiSSXDSjr" download class="download-btn">Download</a>
-        </div>
+</main>
 
-        <!-- Song 9 -->
-        <div class="song-card">
-            <!-- Google Drive Audio Embed -->
-            <iframe src="https://drive.google.com/file/d/1n5jCLZGZsCodnxuDpkRTdF-6NqnfnBIZ/preview" allow="autoplay"></iframe>
-            <p>🌟 デモーニッシュ</p>
-            <a href="https://drive.google.com/uc?export=download&id=1n5jCLZGZsCodnxuDpkRTdF-6NqnfnBIZ" download class="download-btn">Download</a>
-        </div>
-
-        <!-- Song 10 -->
-        <div class="song-card">
-            <!-- Google Drive Audio Embed -->
-            <iframe src="https://drive.google.com/file/d/1H8umBStqQ6EqKEn6U5GZl-1m5EhD3GGl/preview" allow="autoplay"></iframe>
-            <p>🌟 ルーザーガール</p>
-            <a href="https://drive.google.com/uc?export=download&id=1H8umBStqQ6EqKEn6U5GZl-1m5EhD3GGl" download class="download-btn">Download</a>
-        </div>
-
-        <!-- Song 11 -->
-        <div class="song-card">
-            <!-- Google Drive Audio Embed -->
-            <iframe src="https://drive.google.com/file/d/1Sw_gUOR4CaX_35M1b-JCN-w-EDC8gJwC/preview" allow="autoplay"></iframe>
-            <p>🌟 ロックな君とはお別れだ</p>
-            <a href="https://drive.google.com/uc?export=download&id=1Sw_gUOR4CaX_35M1b-JCN-w-EDC8gJwC" download class="download-btn">Download</a>
-        </div>
-
-        <!-- Song 12 -->
-        <div class="song-card">
-            <!-- Google Drive Audio Embed -->
-            <iframe src="https://drive.google.com/file/d/1nCWUqTAKJXsL2E3PHlg4FDjZXQhvvUq-/preview" allow="autoplay"></iframe>
-            <p>🌟 傷つけど愛してる</p>
-            <a href="https://drive.google.com/uc?export=download&id=1nCWUqTAKJXsL2E3PHlg4FDjZXQhvvUq-" download class="download-btn">Download</a>
-        </div>
-
-        <!-- Song 13 -->
-        <div class="song-card">
-            <!-- Google Drive Audio Embed -->
-            <iframe src="https://drive.google.com/file/d/1KFO20lk7pvbmaIoL9lmBvT1lKlS0S-xu/preview" allow="autoplay"></iframe>
-            <p>🌟 過去に囚われている</p>
-            <a href="https://drive.google.com/uc?export=download&id=1KFO20lk7pvbmaIoL9lmBvT1lKlS0S-xu" download class="download-btn">Download</a>
-        </div>
-
-        <!-- Song 14 -->
-        <div class="song-card">
-            <!-- Google Drive Audio Embed -->
-            <iframe src="https://drive.google.com/file/d/1Q2O4AniQe-0Wtz4NJzZDRAKq_QCNz9G1/preview" allow="autoplay"></iframe>
-            <p>🌟 雨模様</p>
-            <a href="https://drive.google.com/uc?export=download&id=1Q2O4AniQe-0Wtz4NJzZDRAKq_QCNz9G1" download class="download-btn">Download</a>
-        </div>
-
-    </div>
-    <!-- Back Button -->
-    <button class="btn return-btn" onclick="window.location.href='https://yeohww2.github.io/yume-portfolio/#music'">⬅️ Back to Music Section</button>
-</section>
-
-<script src="tuyu.js"></script>
-
+<script src="script.js"></script>
 </body>
 </html>
