@@ -33,14 +33,19 @@ document.querySelectorAll('nav a').forEach(link => {
             top: offsetPosition,
             behavior: 'smooth' // Smooth scrolling effect
         });
+
+        // Hide navbar after clicking a link (optional for mobile)
+        if (!navbarVisible) toggleNavbar();
     });
 });
-
 
 // Function to create random sparkles
 function createSparkles() {
     const sparkleContainer = document.getElementById('sparkles-container');
     const sparkleCount = 15; // Number of sparkles to generate
+
+    // Clear existing sparkles before creating new ones
+    sparkleContainer.innerHTML = '';
 
     for (let i = 0; i < sparkleCount; i++) {
         const sparkle = document.createElement('div');
@@ -73,23 +78,44 @@ setInterval(createSparkles, 10000);
 
 function openModal(gameId) {
     // Get the modal by ID
-    var modal = document.getElementById(gameId);
-    modal.style.display = "block";  // Show the modal
+    const modal = document.getElementById(gameId);
+    modal.style.display = "block"; // Show the modal
+
+    // Optionally hide the navbar toggle button
+    const navToggleBtn = document.querySelector('.nav-toggle-btn');
+    if (navToggleBtn) navToggleBtn.classList.add('hidden');
 }
 
 function closeModal(gameId) {
     // Get the modal by ID and hide it
-    var modal = document.getElementById(gameId);
-    modal.style.display = "none";  // Hide the modal
+    const modal = document.getElementById(gameId);
+    modal.style.display = "none"; // Hide the modal
+
+    // Optionally show the navbar toggle button
+    const navToggleBtn = document.querySelector('.nav-toggle-btn');
+    if (navToggleBtn) navToggleBtn.classList.remove('hidden');
 }
 
 // Close the modal if the user clicks outside the modal content
 window.onclick = function(event) {
-    var modals = document.querySelectorAll(".game-modal");
+    const modals = document.querySelectorAll(".game-modal");
     modals.forEach(function(modal) {
         if (event.target === modal) {
             modal.style.display = "none";
+
+            // Optionally show the navbar toggle button
+            const navToggleBtn = document.querySelector('.nav-toggle-btn');
+            if (navToggleBtn) navToggleBtn.classList.remove('hidden');
         }
     });
 };
+
+// Adjust main margin dynamically based on header height
+window.addEventListener('resize', adjustMargin);
+window.addEventListener('DOMContentLoaded', adjustMargin);
+
+function adjustMargin() {
+    const headerHeight = document.querySelector('header').offsetHeight;
+    document.querySelector('main').style.marginTop = headerHeight + 'px';
+}
 
