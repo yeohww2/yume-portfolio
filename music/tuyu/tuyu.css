@@ -157,3 +157,134 @@ audio {
         height: 60px;
     }
 }
+
+
+
+/* Global Music Notes Container */
+.music-notes {
+    position: fixed; /* Fixed to ensure it stays across all sections */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none; /* Prevent interference with page elements */
+    z-index: -1; /* Place behind all content */
+}
+
+/* Individual Notes Animation */
+.music-notes .note {
+    position: absolute;
+    font-size: 20px;
+    animation: float 8s infinite ease-in-out;
+    color: rgba(255, 255, 255, 0.6); /* Subtle and glowing */
+    opacity: 0; /* Initially invisible */
+}
+
+/* Keyframe Animation for Floating */
+@keyframes float {
+    0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh) translateX(calc(-50vw + 100vw * var(--random-x)));
+        opacity: 0;
+    }
+}
+
+/* Randomize Notes' Positions and Styles */
+.music-notes .note:nth-child(1) {
+    --random-x: 0.1;
+    font-size: 25px;
+    animation-delay: 0s;
+}
+.music-notes .note:nth-child(2) {
+    --random-x: 0.3;
+    font-size: 30px;
+    animation-delay: 2s;
+}
+.music-notes .note:nth-child(3) {
+    --random-x: 0.7;
+    font-size: 20px;
+    animation-delay: 4s;
+}
+.music-notes .note:nth-child(4) {
+    --random-x: 0.9;
+    font-size: 35px;
+    animation-delay: 6s;
+}
+
+
+
+/* Falling Symbols Container */
+.falling-symbols {
+    position: fixed; /* Covers the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none; /* Prevent interaction interference */
+    z-index: 9999; /* Ensure it appears above all content */
+}
+
+/* Individual Symbol Style */
+.falling-symbols .symbol {
+    position: absolute;
+    font-size: 20px; /* Initial size of the ✦ symbol */
+    color: yellow; /* Bright yellow color */
+    animation: fall 6s infinite ease-in, fade-blink 1.5s infinite; /* Combine falling and blinking effects */
+    opacity: 0.8; /* Slight transparency */
+}
+
+/* Falling Animation */
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh); /* Start above the viewport */
+        opacity: 0;
+    }
+    10% {
+        opacity: 1; /* Gradually appear */
+    }
+    100% {
+        transform: translateY(110vh); /* End below the viewport */
+        opacity: 0; /* Fade out */
+    }
+}
+
+/* Blinking/Fading Animation */
+@keyframes fade-blink {
+    0%, 100% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 0.2; /* Dim at the midpoint */
+    }
+}
+
+/* Randomize Symbols' Sizes and Positions */
+.falling-symbols .symbol:nth-child(1) {
+    left: 5%; /* Position on the page */
+    animation-delay: 0s; /* Staggered start */
+    font-size: 30px; /* Random size */
+}
+.falling-symbols .symbol:nth-child(2) {
+    left: 25%;
+    animation-delay: 1s;
+    font-size: 25px;
+}
+.falling-symbols .symbol:nth-child(3) {
+    left: 50%;
+    animation-delay: 2s;
+    font-size: 20px;
+}
+.falling-symbols .symbol:nth-child(4) {
+    left: 75%;
+    animation-delay: 3s;
+    font-size: 35px;
+}
+
