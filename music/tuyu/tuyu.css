@@ -237,54 +237,54 @@ audio {
     position: absolute;
     font-size: 20px; /* Initial size of the ✦ symbol */
     color: yellow; /* Bright yellow color */
-    animation: fall 6s infinite ease-in, fade-blink 1.5s infinite; /* Combine falling and blinking effects */
-    opacity: 0.8; /* Slight transparency */
+    text-shadow: 0 0 8px rgba(255, 255, 0, 0.8); /* Add a glowing effect */
+    animation: fall 4s linear infinite, blink 1.5s infinite; /* Continuous falling and blinking */
+    opacity: 0; /* Initially invisible */
 }
 
-/* Falling Animation */
+/* Immediate Falling Animation */
 @keyframes fall {
     0% {
-        transform: translateY(-10vh); /* Start above the viewport */
-        opacity: 0;
+        transform: translateY(-120vh); /* Start above the viewport */
+        opacity: 0; /* Invisible */
     }
     10% {
-        opacity: 1; /* Gradually appear */
+        opacity: 1; /* Become visible while falling */
     }
     100% {
-        transform: translateY(110vh); /* End below the viewport */
+        transform: translateY(100vh); /* End below the viewport */
         opacity: 0; /* Fade out */
     }
 }
 
-/* Blinking/Fading Animation */
-@keyframes fade-blink {
+/* Blinking Effect (Optional) */
+@keyframes blink {
     0%, 100% {
-        opacity: 0.8;
+        opacity: 1;
     }
     50% {
-        opacity: 0.2; /* Dim at the midpoint */
+        opacity: 0.4; /* Dim briefly */
     }
 }
 
-/* Randomize Symbols' Sizes and Positions */
+/* Randomize Positions and Sizes */
 .falling-symbols .symbol:nth-child(1) {
-    left: 5%; /* Position on the page */
-    animation-delay: 0s; /* Staggered start */
-    font-size: 30px; /* Random size */
+    left: 5%;
+    animation-delay: 0s; /* Start immediately */
+    font-size: 30px;
 }
 .falling-symbols .symbol:nth-child(2) {
     left: 25%;
-    animation-delay: 1s;
+    animation-delay: 0.2s; /* Small delay */
     font-size: 25px;
 }
 .falling-symbols .symbol:nth-child(3) {
     left: 50%;
-    animation-delay: 2s;
+    animation-delay: 0.4s;
     font-size: 20px;
 }
 .falling-symbols .symbol:nth-child(4) {
     left: 75%;
-    animation-delay: 3s;
+    animation-delay: 0.6s;
     font-size: 35px;
 }
-
