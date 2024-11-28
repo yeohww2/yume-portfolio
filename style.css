@@ -230,6 +230,10 @@ nav a:hover {
     transition: background 0.3s, transform 0.2s;
 }
 
+.nav-toggle-btn.hidden {
+    display: none;
+}
+
 .nav-toggle-btn:hover {
     background: #fbc2eb;
     color: #fff;
@@ -381,17 +385,23 @@ main {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     overflow: auto;
-    padding-top: 60px;
 }
+
 .modal-content {
     background-color: #fff;
-    margin: auto;
     padding: 20px;
     border-radius: 15px;
     width: 80%;
     max-width: 600px;
     text-align: center;
+
+    /* Centering styles */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
+
 .close-btn {
     color: #aaa;
     font-size: 28px;
@@ -407,11 +417,13 @@ main {
     text-decoration: none;
     cursor: pointer;
 }
+
 .game-modal img {
     width: 100%;
     height: auto;
     border-radius: 10px;
 }
+
 /* Ensure modal content doesn't overlap */
 .game-modal .modal-content {
     position: relative;
