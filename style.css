@@ -1,159 +1,458 @@
-/* General Page Styling */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #fad0c4, #ffd1ff); /* Pastel gradient */
+    overflow-x: hidden;
+    color: #fff;
     text-align: center;
 }
 
-/* Section Styling */
-#artist-music {
-    padding: 40px;
-    text-align: center;
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+/* Falling Hearts Animation */
+.falling-hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
 }
 
-/* Heading */
-#artist-music h2 {
-    font-size: 6vw; 
+.heart {
+    position: absolute;
+    font-size: 2rem;
+    animation: fall 3s ease-in infinite;
+    opacity: 0;
     color: #ff69b4;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    max-font-size: 3rem; 
 }
 
-/* Description */
-.artist-description {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 30px;
-    font-style: italic;
+/* Keyframes for the falling animation */
+@keyframes fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
 }
 
-/* Song List Styling */
-.song-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+/* Randomize the position and animation timing */
+.heart:nth-child(1) {
+    left: 20%;
+    animation-duration: 4s;
+    animation-delay: 0s;
 }
 
-/* Song Cards */
-.song-card {
+.heart:nth-child(2) {
+    left: 40%;
+    animation-duration: 5s;
+    animation-delay: 0.5s;
+}
+
+.heart:nth-child(3) {
+    left: 60%;
+    animation-duration: 3.5s;
+    animation-delay: 1s;
+}
+
+.heart:nth-child(4) {
+    left: 80%;
+    animation-duration: 6s;
+    animation-delay: 1.5s;
+}
+
+/* Bubbles Animation */
+.bubbles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1002;
+}
+
+.bubble {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    animation: bubbleFloat 10s ease-in-out infinite;
+    opacity: 0.8;
+    transform: translateY(calc(100vh * -1)); /* Start bubbles off-screen */
+}
+
+@keyframes bubbleFloat {
+    0% {
+        transform: translateY(100vh) scale(0.3); /* Smaller size at start */
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-100vh) scale(1); /* Increase size as it floats */
+        opacity: 0;
+    }
+}
+
+/* Random positions and delays for bubbles */
+.bubble:nth-child(1) {
+    left: 15%;
+    animation-delay: -2s; /* Start animation at 2 seconds in */
+    animation-duration: 8s;
+}
+
+.bubble:nth-child(2) {
+    left: 50%;
+    animation-delay: -4s; /* Start animation at 4 seconds in */
+    animation-duration: 12s;
+}
+
+.bubble:nth-child(3) {
+    left: 70%;
+    animation-delay: -6s; /* Start animation at 6 seconds in */
+    animation-duration: 10s;
+}
+
+/* Sparkles Animation */
+.sparkles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1003;
+}
+
+.sparkle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: sparkleAnimation 2s infinite;
+    opacity: 0;
+}
+
+@keyframes sparkleAnimation {
+    0% {
+        opacity: 0.8;
+        transform: scale(0.5) translateX(0) translateY(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1) translateX(15px) translateY(15px);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.5) translateX(-15px) translateY(-15px);
+    }
+}
+
+
+/* Background */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, #ff9a9e, #fbc2eb, #f8a5c2);
+    background-size: 400% 400%;
+    animation: gradientAnimation 5s ease infinite;
+    z-index: -1;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Header */
+header {
+    padding: 20px 0;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: transform 0.5s ease;
+}
+
+header.hidden {
+    transform: translateY(-100%);
+}
+
+header h1 {
+    font-size: 4vw;
+    margin: 0;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.6vw;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #fbc2eb;
+}
+
+/* Navigation Toggle Button */
+.nav-toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #f8a5c2;
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1100;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.nav-toggle-btn:hover {
+    background: #fbc2eb;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.nav-toggle-btn span.material-icons {
+    font-size: 24px;
+}
+
+/* Main Content */
+main {
+    margin-top: 80px;
+}
+
+.section {
+    height: 100vh;
+    padding: 60px 10px 80px;
+    scroll-margin-top: 60px;
+    text-align: center;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 5%;
+    width: 200px;
+    margin: 10px;
     background: #fff;
-    padding: 15px;
+    color: #f8a5c2;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.btn:hover {
+    background: #fbc2eb;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* About Me Title */
+.section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    color: #ff69b4; /* Pink title */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Individual Content Blocks */
+.about-content {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #555;
+    background-color: #fff;
+    border: 4px dotted #ff6fa1;
+    padding: 20px;
     border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    max-width: 800px;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Bounce Animation */
+@keyframes bounceBack {
+    0% {
+        transform: translateX(0);
+    }
+    30% {
+        transform: translateX(15px);
+    }
+    50% {
+        transform: translateX(0);
+    }
+    70% {
+        transform: translateX(8px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Hover Effect: Bounce the content */
+.about-content:hover {
+    animation: bounceBack 0.6s ease-in-out;
+}
+
+/* About List */
+.about-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.about-content li {
+    margin-bottom: 5px;
+    line-height: 1.6;
+}
+
+.about-content li b {
+    color: #ff69b4;
+    margin-left: 5px;
+}
+
+.about-content li::before {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+/* Social Link */
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Game Cards */
+.game-card {
+    margin: 20px auto;
+    max-width: 90%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* Hover effect for Game Cards */
+.game-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+/* Modal Styles */
+.game-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: auto;
+    padding-top: 60px;
+}
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+    border-radius: 15px;
     width: 80%;
     max-width: 600px;
     text-align: center;
+}
+.close-btn {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    cursor: pointer;
+}
+.close-btn:hover,
+.close-btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.game-modal img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+/* Ensure modal content doesn't overlap */
+.game-modal .modal-content {
+    position: relative;
+}
+
+/* Music Section Styling */
+/* Music Cards */
+.music-category {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.music-card {
+    background: #fff;
+    border-radius: 15px;
+    text-align: center;
+    width: 250px;
+    padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.song-card:hover {
+.music-card:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Song Title */
-.song-card p {
-    font-size: 1.2rem;
-    color: #555;
-    margin-top: 10px;
-}
-
-/* Audio Player Styling */
-audio {
-    width: 100%;
-    outline: none;
-    border-radius: 5px;
-}
-
-/* Return Button */
-.return-btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background: #ff69b4;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 1.1rem;
-    transition: background 0.3s ease;
-}
-
-.return-btn:hover {
-    background: #ff85b2;
-}
-
-/* General Button Styling */
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #ff69b4;
-    color: #fff;
-    border-radius: 8px;
+.music-card a {
     text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s ease;
+    color: #333;
 }
 
-.btn:hover {
-    background: #ff85b2;
+.music-card h3 {
+    font-size: 1.5rem;
+    color: #ff69b4;
+    margin: 10px 0;
 }
 
-/* Download Button Styling */
-.download-btn {
-    margin-top: 20px;
-    display: inline-block;
+.music-card p {
     font-size: 1rem;
-    background: #ff69b4;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 10px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
-
-.download-btn:hover {
-    background: #ff85b2;
-    transform: scale(1.05);
-}
-
-.download-btn:active {
-    transform: scale(0.95);
-}
-
-@keyframes fadeInOut {
-    0% {
-        opacity: 0;
-    }
-    10% {
-        opacity: 1;
-    }
-    90% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
-.song-card iframe {
-    width: 100%;
-    height: 80px;
-    max-width: 100%;
-    border: none;
-    border-radius: 8px;
-}
-
-/* Responsive handling for mobile screens */
-@media (max-width: 768px) {
-    .song-card iframe {
-        height: 60px;
-    }
+    color: #555;
 }
