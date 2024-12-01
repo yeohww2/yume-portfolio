@@ -17,10 +17,14 @@ body {
 
 /* Description */
 .artist-description {
-    font-size: 1.3rem;
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
     color: #555;
     font-style: italic;
-    margin-bottom: 30px;
+    text-align: center;
+    padding: 10px 20px;
+    line-height: 1.5;
 }
 
 /* Song List */
