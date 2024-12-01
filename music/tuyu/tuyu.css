@@ -64,13 +64,6 @@ body {
     margin-top: 10px;
 }
 
-/* Audio Player Styling */
-audio {
-    width: 100%;
-    outline: none;
-    border-radius: 5px;
-}
-
 /* Return Button */
 .return-btn {
     margin-top: 20px;
