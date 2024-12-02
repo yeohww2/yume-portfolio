@@ -7,14 +7,6 @@ body {
     text-align: center;
 }
 
-/* Section Styling */
-#artist-music {
-    padding: 40px;
-    text-align: center;
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
 /* Heading */
 #artist-music h2 {
     font-size: 6vw;
@@ -206,75 +198,74 @@ body {
 
 /* Song Cards */
 .song-card {
-    background: #fff;
-    padding: 15px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 600px;
+    background: #ffffff;
+    padding: 18px;
+    border-radius: 12px;
+    width: 85%;
+    max-width: 650px;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin: 20px auto; /* Center align the card */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 20px auto;
 }
 
 .song-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Song Title */
-.song-card p {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #555;
-    margin: 10px 0;
-}
-
-/* Video iframe Styling */
 .song-card iframe {
     width: 100%;
-    max-width: 560px;
-    height: 315px; /* Standard video aspect ratio (16:9) */
-    border-radius: 10px;
-    margin: 15px 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    height: 300px;
+    max-width: 100%;
+    border: none;
+    border-radius: 12px;
+    margin-top: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* MP4 Download Button */
-.download-mp4-btn {
-    display: inline-block;
+.download-mp4-btn,
+.download-mp3-btn {
+    margin-top: 12px;
     padding: 10px 20px;
-    background: #ff69b4;
-    color: white;
     border-radius: 8px;
-    text-decoration: none;
+    font-size: 1rem;
     font-weight: bold;
-    margin: 5px;
-    transition: background 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.download-mp4-btn {
+    background: #ffc1e3; /* Soft pastel pink */
+    color: #000000;
 }
 
 .download-mp4-btn:hover {
-    background: #ff85b2;
+    background: #ffd4eb; /* Lighter pastel pink for hover */
     transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.download-mp4-btn:active {
+    transform: scale(0.95);
+    background: #ffafd8; /* Slightly darker pastel pink for active */
 }
 
 .download-mp3-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #ff6fa1;
-    color: white;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    margin: 5px;
-    transition: background 0.3s ease, transform 0.3s ease;
+    background: #ff99c8; /* Bright pastel pink */
+    color: #000000;
 }
 
 .download-mp3-btn:hover {
-    background: #ff99c2;
+    background: #ffadc9; /* Slightly lighter hover color */
     transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .download-mp3-btn:active {
     transform: scale(0.95);
+    background: #ff85b0; /* Active color */
 }
