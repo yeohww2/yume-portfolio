@@ -7,8 +7,9 @@ function createRaindrop() {
 
     // Randomize position and animation delay
     raindrop.style.left = `${Math.random() * 100}vw`;
-    raindrop.style.animationDelay = `${Math.random() * 2}s`; 
-    raindrop.style.animationDuration = `${Math.random() * 2 + 2}s`; 
+    raindrop.style.animationDelay = `${Math.random() * 2}s`;
+    raindrop.style.animationDuration = `${Math.random() * 2 + 2}s`;
+
     raindropsContainer.appendChild(raindrop);
 
     // Remove raindrop after it falls off the screen
@@ -17,7 +18,7 @@ function createRaindrop() {
 
 // Function to continuously create raindrops
 function generateRaindrops() {
-    setInterval(createRaindrop, 150); // Create a new raindrop every 150ms
+    setInterval(createRaindrop, 500); // Create a new raindrop every 150ms
 }
 
 generateRaindrops();
