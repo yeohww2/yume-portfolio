@@ -163,7 +163,6 @@ body::before {
 .download-mp4-btn {
     background: #6baed6;
     color: #ffffff;
-    border: 1px solid #4179a6;
     transition: all 0.3s ease;
 }
 
@@ -182,7 +181,6 @@ body::before {
 .download-mp3-btn {
     background: #88c3d8;
     color: #ffffff;
-    border: 1px solid #5a99a6;
     transition: all 0.3s ease;
 }
 
