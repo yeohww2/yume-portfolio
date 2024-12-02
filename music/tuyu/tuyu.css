@@ -3,25 +3,37 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #fad0c4, #ffd1ff); /* Pastel gradient */
+    background: linear-gradient(to bottom, #574cba, #d7e6f5); /* Deep sky blue to misty blue */
+    background-size: cover; /* Ensure the gradient fills the screen */
+    background-attachment: fixed; /* Make it static for a smooth effect */
     text-align: center;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/asfalt-dark.png'); /* Subtle texture pattern */
+    opacity: 0.2;
+    z-index: -1;
 }
 
 /* Heading */
 #artist-music h2 {
-    font-size: 6vw;
-    color: #ff69b4;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    max-font-size: 3rem;
+    font-size: 10vw;
+    color: #d0e7f9;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Description */
 .artist-description {
     font-size: 1.2rem;
-    color: #555;
     margin-bottom: 30px;
     font-style: italic;
+    color: #e0f7fa;
 }
 
 /* Song List Styling */
@@ -34,165 +46,67 @@ body {
 
 /* Return Button */
 .return-btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background: #ff69b4;
+    background: #739bbd; /* Cool blue */
     color: #fff;
     border: none;
     border-radius: 8px;
-    cursor: pointer;
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    padding: 12px 24px;
     transition: background 0.3s ease;
+    margin-bottom: 20px;
 }
 
 .return-btn:hover {
-    background: #ff85b2;
+    background: #5a819f;
 }
 
-/* General Button Styling */
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #ff69b4;
-    color: #fff;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s ease;
-}
 
-.btn:hover {
-    background: #ff85b2;
-}
 
-/* Global Music Notes Container */
-.music-notes {
-    position: fixed; /* Fixed to ensure it stays across all sections */
+/* Raindrop Effect */
+.raindrops {
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
     overflow: hidden;
-    pointer-events: none; /* Prevent interference with page elements */
-    z-index: -1; /* Place behind all content */
 }
 
-/* Individual Notes Animation */
-.music-notes .note {
+.raindrop {
     position: absolute;
-    font-size: 20px;
-    animation: float 8s infinite ease-in-out;
-    color: rgba(255, 255, 255, 0.6); /* Subtle and glowing */
-    opacity: 0; /* Initially invisible */
-}
-
-/* Keyframe Animation for Floating */
-@keyframes float {
-    0% {
-        transform: translateY(100vh) translateX(0);
-        opacity: 0;
-    }
-    20% {
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-10vh) translateX(calc(-50vw + 100vw * var(--random-x)));
-        opacity: 0;
-    }
-}
-
-/* Randomize Notes' Positions and Styles */
-.music-notes .note:nth-child(1) {
-    --random-x: 0.1;
-    font-size: 25px;
-    animation-delay: 0s;
-}
-.music-notes .note:nth-child(2) {
-    --random-x: 0.3;
-    font-size: 30px;
-    animation-delay: 2s;
-}
-.music-notes .note:nth-child(3) {
-    --random-x: 0.7;
-    font-size: 20px;
-    animation-delay: 4s;
-}
-.music-notes .note:nth-child(4) {
-    --random-x: 0.9;
-    font-size: 35px;
-    animation-delay: 6s;
-}
-
-
-
-/* Falling Symbols Container */
-.falling-symbols {
-    position: fixed; /* Covers the entire viewport */
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    pointer-events: none; /* Prevent interaction interference */
-    z-index: 9999; /* Ensure it appears above all content */
-}
-
-/* Individual Symbol Style */
-.falling-symbols .symbol {
-    position: absolute;
-    font-size: 20px; /* Initial size of the ✦ symbol */
-    color: yellow; /* Bright yellow color */
-    text-shadow: 0 0 8px rgba(255, 255, 0, 0.8); /* Add a glowing effect */
-    animation: fall 4s linear infinite, blink 1.5s infinite; /* Continuous falling and blinking */
-    opacity: 0; /* Initially invisible */
-}
-
-/* Immediate Falling Animation */
-@keyframes fall {
-    0% {
-        transform: translateY(-120vh); /* Start above the viewport */
-        opacity: 0; /* Invisible */
-    }
-    10% {
-        opacity: 1; /* Become visible while falling */
-    }
-    100% {
-        transform: translateY(100vh); /* End below the viewport */
-        opacity: 0; /* Fade out */
-    }
-}
-
-/* Blinking Effect (Optional) */
-@keyframes blink {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.4; /* Dim briefly */
-    }
-}
-
-/* Randomize Positions and Sizes */
-.falling-symbols .symbol:nth-child(1) {
-    left: 5%;
-    animation-delay: 0s; /* Start immediately */
-    font-size: 30px;
-}
-.falling-symbols .symbol:nth-child(2) {
-    left: 25%;
-    animation-delay: 0.2s; /* Small delay */
-    font-size: 25px;
-}
-.falling-symbols .symbol:nth-child(3) {
+    top: -10%;
     left: 50%;
-    animation-delay: 0.4s;
-    font-size: 20px;
+    width: 5px;
+    height: 15px;
+    background: rgba(173, 216, 230, 0.8);
+    border-radius: 50% / 40%;
+    animation: fall 4s linear infinite;
+    opacity: 0.8;
 }
-.falling-symbols .symbol:nth-child(4) {
-    left: 75%;
-    animation-delay: 0.6s;
-    font-size: 35px;
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+        opacity: 0;
+    }
+}
+
+.raindrop:nth-child(1) {
+    width: 2px;
+    height: 70px;
+}
+
+.raindrop:nth-child(2) {
+    width: 4px;
+    height: 90px;
+}
+
+.raindrop:nth-child(3) {
+    width: 3px;
+    height: 80px;
 }
 
 
@@ -207,6 +121,13 @@ body {
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin: 20px auto;
+}
+
+.song-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
 }
 
 .song-card:hover {
@@ -238,34 +159,40 @@ body {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* MP4 Download Button */
 .download-mp4-btn {
-    background: #ffc1e3; /* Soft pastel pink */
-    color: #000000;
+    background: #6baed6; /* Muted blue */
+    color: #ffffff; /* White text for contrast */
+    border: 1px solid #4179a6; /* Slightly darker blue border */
+    transition: all 0.3s ease;
 }
 
 .download-mp4-btn:hover {
-    background: #ffd4eb; /* Lighter pastel pink for hover */
+    background: #5a99c6; /* Darker blue for hover */
     transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add slight shadow effect */
 }
 
 .download-mp4-btn:active {
     transform: scale(0.95);
-    background: #ffafd8; /* Slightly darker pastel pink for active */
+    background: #4179a6; /* Even darker for active */
 }
 
+/* MP3 Download Button */
 .download-mp3-btn {
-    background: #ff99c8; /* Bright pastel pink */
-    color: #000000;
+    background: #88c3d8; /* Light cyan */
+    color: #ffffff; /* White text */
+    border: 1px solid #5a99a6; /* Slightly darker cyan border */
+    transition: all 0.3s ease;
 }
 
 .download-mp3-btn:hover {
-    background: #ffadc9; /* Slightly lighter hover color */
+    background: #77b1c5; /* Slightly darker cyan for hover */
     transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add slight shadow effect */
 }
 
 .download-mp3-btn:active {
     transform: scale(0.95);
-    background: #ff85b0; /* Active color */
+    background: #5a99a6; /* Even darker cyan for active */
 }
