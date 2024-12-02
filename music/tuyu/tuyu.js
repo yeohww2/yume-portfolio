@@ -18,14 +18,7 @@ function createRaindrop() {
 
 // Function to continuously create raindrops
 function generateRaindrops() {
-    const MAX_RAINDROPS = 100; // Limit total raindrops
-    let raindropCount = 0;
-    const interval = setInterval(() => {
-        if (raindropCount >= MAX_RAINDROPS) {
-            clearInterval(interval);
-            return;
-        }
-        createRaindrop();
-        raindropCount++;
-    }, 500);
+    setInterval(createRaindrop, 150); // Create a new raindrop every 150ms
 }
+
+generateRaindrops();
