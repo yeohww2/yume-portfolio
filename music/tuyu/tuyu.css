@@ -5,7 +5,6 @@ body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(to bottom, #574cba, #d7e6f5);
     background-size: cover;
-    background-attachment: scroll;
     text-align: center;
 }
 
@@ -88,13 +87,9 @@ body::before {
 }
 
 @keyframes fall {
-    0% {
-        opacity: 0.8;
-        transform: translateY(0);
-    }
-    100% {
+    to {
+        transform: translateY(110vh);
         opacity: 0;
-        transform: translateY(100vh);
     }
 }
 
@@ -198,3 +193,4 @@ body::before {
     transform: scale(0.95);
     background: #5a99a6;
 }
+
