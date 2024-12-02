@@ -17,14 +17,10 @@ body {
 
 /* Description */
 .artist-description {
-    font-size: 1rem;
-    max-width: 600px;
-    margin: 0 auto;
+    font-size: 1.3rem;
     color: #555;
     font-style: italic;
-    text-align: center;
-    padding: 10px 20px;
-    line-height: 1.5;
+    margin-bottom: 30px;
 }
 
 /* Song List */
@@ -35,39 +31,6 @@ body {
     gap: 15px;
 }
 
-/* Song Cards */
-.song-card {
-    background: #fff;
-    padding: 15px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 600px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.song-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
-
-
-
-.song-card iframe {
-    width: 100%;
-    height: 80px;
-    max-width: 100%;
-    border: none;
-    border-radius: 8px;
-}
-
-/* Responsive handling for mobile screens */
-@media (max-width: 768px) {
-    .song-card iframe {
-        height: 60px;
-    }
-}
 
 /* Button Styling */
 .return-btn {
@@ -123,31 +86,76 @@ body {
     }
 }
 
+.song-card {
+    background: #ffffff;
+    padding: 18px;
+    border-radius: 12px;
+    width: 85%;
+    max-width: 650px;
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 20px auto;
+}
 
-/* Download Button Styling */
-.download-btn {
-    margin-top: 15px;
-    padding: 10px 20px;
-    background: #8a2be2;
-    color: white;
+.song-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.song-card iframe {
+    width: 100%;
+    height: 300px;
+    max-width: 100%;
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
+    margin-top: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.download-mp4-btn,
+.download-mp3-btn {
+    margin-top: 12px;
+    padding: 10px 20px;
+    border-radius: 8px;
     font-size: 1rem;
     font-weight: bold;
     text-decoration: none;
     cursor: pointer;
     transition: all 0.3s ease;
     display: inline-block;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
-.download-btn:hover {
-    background: #9c47eb;
+.download-mp4-btn {
+    background: #cce5ff;
+    color: #000000;
+}
+
+.download-mp4-btn:hover {
+    background: #d9edff;
     transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.download-btn:active {
+.download-mp4-btn:active {
     transform: scale(0.95);
-    background: #6e20b5;
+    background: #b3d9ff;
 }
+
+.download-mp3-btn {
+    background: #d3c4f3;
+    color: #000000;
+}
+
+.download-mp3-btn:hover {
+    background: #e5dbfc;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.download-mp3-btn:active {
+    transform: scale(0.95);
+    background: #c1b2e0;
+}
+
