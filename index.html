@@ -57,7 +57,7 @@
         <div class="about-container">
             <!-- English Section -->
             <div class="about-content">
-                <p>Hi! I'm <b>Yume/Vivian</b>. This portfolio showcases the games I love to play and the social media platforms I use. :)</p>
+                <p>Hi! I'm <b>Yume</b>. This portfolio showcases the games I love to play and the social media platforms I use. :)</p>
                 <!-- Add space -->
                 <br>
                 <ul>
@@ -71,7 +71,7 @@
             <br>
             <!-- Mandarin Section -->
             <div class="about-content">
-                <p>嗨！我网名叫<b>西西/小雯</b>。这个作品集展示了我喜欢玩的游戏以及我使用的社交媒体平台。:)</p>
+                <p>嗨！我是<b>西西</b>。这个作品集展示了我喜欢玩的游戏以及我使用的社交媒体平台。:)</p>
                 <br>
                 <ul>
                     <li>🎂 <b>生日：</b> 22/02/2001</li>
@@ -98,27 +98,38 @@
     <!-- Game Section -->
     <section id="games" class="section">
         <h2>My Mobile Games</h2>
+
         <div class="game-card" onclick="openModal('game1')">
-            <h3>蛋仔派对 Eggy Party (国际服)</h3>
-            <p>Username: <span>鬱彞</span></p>
+            <h3>王者 Honor of Kings (国际服)</h3>
+            <p>Username: <span>西茜</span></p>
         </div>
 
         <div class="game-card" onclick="openModal('game2')">
+            <h3>蛋仔派对 Eggy Party (国际服)</h3>
+            <p>Username: <span>西茜</span></p>
+        </div>
+
+        <div class="game-card" onclick="openModal('game3')">
+            <h3>光遇 Sky: Children of the Light (国际服)</h3>
+            <p>Username: <span>西茜</span></p>
+        </div>
+
+        <div class="game-card" onclick="openModal('game4')">
             <h3>姜饼人之塔 Cookie Run: Tower of Adventures</h3>
             <p>Username: <span>你的西西</span></p>
         </div>
 
-        <div class="game-card" onclick="openModal('game3')">
+        <div class="game-card" onclick="openModal('game5')">
             <h3>姜饼人王国 Cookie Run: Kingdom</h3>
-            <p>Username: <span>西雯的后宫</span></p>
+            <p>Username: <span>西茜</span></p>
         </div>
 
         <!-- Modal for Game 1 -->
         <div id="game1" class="game-modal">
             <div class="modal-content">
                 <span class="close-btn" onclick="closeModal('game1')">&times;</span>
-                <h3>蛋仔派对 Eggy Party (国际服)</h3>
-                <img src="gameimages/eggyparty.jpg" alt="Eggy Party" />
+                <h3>王者 Honor of Kings (国际服)</h3>
+                <img src="gameimages/honorofkings.jpg" alt="Honor of Kings" />
                 <p>Details and description about the game.</p>
             </div>
         </div>
@@ -127,8 +138,8 @@
         <div id="game2" class="game-modal">
             <div class="modal-content">
                 <span class="close-btn" onclick="closeModal('game2')">&times;</span>
-                <h3>姜饼人之塔 Cookie Run: Tower of Adventures</h3>
-                <img src="gameimages/adventures.jpg" alt="Cookie Run: Tower of Adventures" />
+                <h3>蛋仔派对 Eggy Party (国际服)</h3>
+                <img src="gameimages/eggyparty.jpg" alt="Eggy Party" />
                 <p>Details and description about the game.</p>
             </div>
         </div>
@@ -137,12 +148,33 @@
         <div id="game3" class="game-modal">
             <div class="modal-content">
                 <span class="close-btn" onclick="closeModal('game3')">&times;</span>
+                <h3>光遇 Sky: Children of the Light (国际服)</h3>
+                <img src="gameimages/sky.jpg" alt="Sky: Children of the Light" />
+                <p>Details and description about the game.</p>
+            </div>
+        </div>
+
+        <!-- Modal for Game 4 -->
+        <div id="game4" class="game-modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('game4')">&times;</span>
+                <h3>姜饼人之塔 Cookie Run: Tower of Adventures</h3>
+                <img src="gameimages/adventures.jpg" alt="Cookie Run: Tower of Adventures" />
+                <p>Details and description about the game.</p>
+            </div>
+        </div>
+
+        <!-- Modal for Game 5 -->
+        <div id="game5" class="game-modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('game5')">&times;</span>
                 <h3>姜饼人王国 Cookie Run: Kingdom</h3>
                 <img src="gameimages/kingdom.jpg" alt="Cookie Run: Kingdom" />
                 <p>Details and description about the game.</p>
             </div>
         </div>
     </section>
+
 
     <!-- Music Section -->
     <section id="music" class="section">
@@ -164,6 +196,9 @@
 
 </main>
 
+<script src="script.js"></script>
+</body>
+</html>
 <script src="script.js"></script>
 </body>
 </html>
