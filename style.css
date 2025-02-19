@@ -250,7 +250,7 @@ main {
 }
 
 .section {
-    height: 100vh;
+    min-height: 100vh;
     padding: 60px 10px 80px;
     scroll-margin-top: 60px;
     text-align: center;
@@ -429,6 +429,10 @@ main {
     position: relative;
 }
 
+.game-modal h3, .game-modal p {
+    color: #333; /* 深灰色 */
+}
+
 /* Music Section Styling */
 /* Music Cards */
 .music-category {
@@ -468,3 +472,4 @@ main {
     font-size: 1rem;
     color: #555;
 }
+
