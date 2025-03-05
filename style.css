@@ -419,12 +419,13 @@ main {
 }
 
 .game-modal img {
-    width: 100%;  
-    max-width: 500px;  /
-    height: 80%;  
+    width: 90%;
+    max-width: 500px;
+    height: auto;
     max-height: 350px;
-    object-fit: contain; 
+    object-fit: contain;
     border-radius: 10px;
+    aspect-ratio: 16 / 9;
 }
 
 /* Ensure modal content doesn't overlap */
