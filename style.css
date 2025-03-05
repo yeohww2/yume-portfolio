@@ -419,8 +419,10 @@ main {
 }
 
 .game-modal img {
-    width: 550px;  
-    height: 400px; 
+    width: 100%;  
+    max-width: 500px;  /
+    height: auto;  
+    max-height: 350px;
     object-fit: contain; 
     border-radius: 10px;
 }
